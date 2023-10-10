@@ -1,0 +1,124 @@
+.hero {
+    max-width: 1600px;
+    height: 900px;
+    margin: 0 auto;
+    background-image: url('../images/header-bg-min.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    // background-attachment: fixed;
+    background-color: black;
+}
+
+// .hero__themb {
+
+// }
+
+.hero__bolock {
+    padding-top: 320px;
+}
+
+.hero__title-text {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-secondary-text);
+    text-transform: var(--text-transform-upper);
+}
+
+.hero__title-h1 {
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-secondary-text);
+    text-transform: var(--text-transform-upper);
+}
+
+.hero__title-btn {
+    min-width: 238px;
+    min-height: 57px;
+    top: 521px;
+    border: 1px solid var(--color-secondary-text);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: var(--text-transform-upper);
+    color: var(--color-secondary-text);
+    background-color: transparent;
+
+    outline: 1px solid;
+    outline-color: var(--color-secondary-text);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1); 
+}
+
+  
+.hero__title-btn:hover,
+
+.hero__title-btn:focus {
+    box-shadow: inset 0 0 20px #BFE2FF;
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    color: var(--color-secondary-text);
+}
+
+
+@media (max-width: 1200px) {
+    .hero {
+        max-width: 100%;
+        height: 675px;
+        background-image: url('../images/header-bg-1200.jpg');
+    }
+
+    .hero__title-text {
+        font-size: 20px;
+    }
+
+    .hero__title-h1 {
+        font-size: 60px;
+    }
+
+    .hero__title-btn {
+        min-width: 180px;
+        min-height: 45px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 432px;
+        background-image: url('../images/header-bg-768-432.jpg');
+    }
+    .hero__bolock {
+        padding-top: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        background-image: url('../images/header-bg-480.jpg');
+    }
+    .hero__bolock {
+        padding-top: 220px;
+    }
+    .hero__title-text {
+        font-size: 15px;
+    }
+
+    .hero__title-h1 {
+        font-size: 40px;
+    }
+
+    .hero__title-btn {
+        min-width: 150px;
+        min-height: 45px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+}

@@ -1,0 +1,13 @@
+<svg width="0" height="0" class="hidden">
+  <symbol version="1.0" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32.000000 32.000000" id="Logo">
+    <g transform="translate(0.000000,32.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+      <path d="M70 305 c0 -2 13 -25 29 -51 47 -73 47 -90 6 -222 -4 -13 -3 -22 3
+-22 10 0 33 60 47 124 7 34 -9 88 -43 139 -21 32 -42 48 -42 32z"></path>
+      <path d="M145 290 c-17 -19 -17 -21 0 -47 l18 -27 18 23 c23 29 24 34 1 55
+-18 15 -20 15 -37 -4z m22 -32 c-3 -8 -6 -5 -6 6 -1 11 2 17 5 13 3 -3 4 -12
+1 -19z"></path>
+      <path d="M216 268 c-51 -88 -53 -106 -19 -210 8 -27 19 -48 24 -48 12 0 12 2
+-12 72 -24 73 -20 106 21 172 33 51 35 56 20 56 -5 0 -20 -19 -34 -42z"></path>
+    </g>
+  </symbol>
+</svg>

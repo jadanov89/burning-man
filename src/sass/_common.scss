@@ -1,0 +1,86 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+:root {
+    --color-background: #ffffff;
+    --color-secondary-text: #ffffff;
+    --color-secondary-black: #000000;
+    --text-transform-upper: uppercase; 
+  }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Anton', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: var(--color-background);
+}
+
+.container {
+  width: 1200px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .container {
+      width: 768px;
+      padding-left: 0px;
+      padding-right: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .container {
+    padding-left: 50px;
+    padding-right: 50px;
+    box-sizing: border-box;
+}
+}
