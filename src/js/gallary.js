@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Додамо обробник подій для відкриття зображення через basicLightbox
 galleryEl.addEventListener('click', galleryImageClick);
 
-window.addEventListener("keydown", closeModal);
+//window.addEventListener("keydown", closeModal);
 
 
 function galleryImageClick(evt) {
