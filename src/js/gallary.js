@@ -1,5 +1,6 @@
 import PixabayApiService from './api';
 
+
 const pixabayApiService = new PixabayApiService();
 const galleryEl = document.querySelector('.swiper-wrapper');
 
@@ -53,20 +54,56 @@ async function searchAndDisplayImages() {
 searchAndDisplayImages();
 
 // Додамо mySwiper
+// document.addEventListener('DOMContentLoaded', function () {
+//     var mySwiper = new Swiper('.swiper-container', {
+//       slidesPerView: 3,
+//       spaceBetween: 20,
+//       pagination: {
+//         el: '.swiper-pagination',
+//         clickable: true,
+//       },
+//       navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//       },
+//       breakpoints: {
+//         // Додайте адаптивність для зменшення кількості слайдів при розширенні екрану
+//         1200: {
+//           slidesPerView: 2, // 2 слайди при розширенні 1200px
+//         },
+//       },
+//     });
+//   });
+
+
 document.addEventListener('DOMContentLoaded', function () {
-    var mySwiper = new Swiper('.swiper-container', {
-      slidesPerView: 3,
-      spaceBetween: 20,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+  var mySwiper = new Swiper('.swiper-container', {
+    slidesPerView: 1, // Початкова кількість слайдів
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
       },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      // Додайте адаптивність для зменшення кількості слайдів при розширенні екрану
+      1200: {
+        slidesPerView: 3, // 2 слайди при розширенні 1200px
       },
-    });
+      768: {
+        slidesPerView: 2, 
+      },
+    },
   });
+});
+
+
+
+
+
 
 // Додамо обробник подій для відкриття зображення через basicLightbox
 galleryEl.addEventListener('click', galleryImageClick);
