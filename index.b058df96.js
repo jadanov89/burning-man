@@ -71,7 +71,7 @@ config:k.toJSONObject(this.config),code:this.code,status:this.response&&this.res
 M.from=(t,e,r,n,i,o)=>{let s=Object.create($);return k.toFlatObject(t,s,function(t){return t!==Error.prototype},t=>"isAxiosError"!==t),M.call(s,t.message,e,r,n,i),s.cause=t,s.name=t.name,o&&Object.assign(s,o),s},n=function(t){// go through the array every three bytes, we'll deal with trailing stuff later
 for(var e,r=t.length,n=r%3// if we have 1 byte left, pad 2 bytes
 ,i=[],o=0,s=r-n;o<s;o+=16383// must be multiple of 3
-)i.push(function(t,e,r){for(var n,i=[],o=e;o<r;o+=3)i.push(z[(n=(t[o]<<16&16711680)+(t[o+1]<<8&65280)+(255&t[o+2]))>>18&63]+z[n>>12&63]+z[n>>6&63]+z[63&n]);return i.join("")}(t,o,o+16383>s?s:o+16383));return 1===n?i.push(z[(e=t[r-1])>>2]+z[e<<4&63]+"=="):2===n&&i.push(z[(e=(t[r-2]<<8)+t[r-1])>>10]+z[e>>4&63]+z[e<<2&63]+"="),i.join("")};for(var z=[],H=[],J="undefined"!=typeof Uint8Array?Uint8Array:Array,V="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",W=0,K=V.length;W<K;++W)z[W]=V[W],H[V.charCodeAt(W)]=W;// Support decoding URL-safe base64 strings, as Node.js does.
+)i.push(function(t,e,r){for(var n,i=[],o=e;o<r;o+=3)i.push(z[(n=(t[o]<<16&16711680)+(t[o+1]<<8&65280)+(255&t[o+2]))>>18&63]+z[n>>12&63]+z[n>>6&63]+z[63&n]);return i.join("")}(t,o,o+16383>s?s:o+16383));return 1===n?i.push(z[(e=t[r-1])>>2]+z[e<<4&63]+"=="):2===n&&i.push(z[(e=(t[r-2]<<8)+t[r-1])>>10]+z[e>>4&63]+z[e<<2&63]+"="),i.join("")};for(var z=[],H=[],V="undefined"!=typeof Uint8Array?Uint8Array:Array,J="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",W=0,K=J.length;W<K;++W)z[W]=J[W],H[J.charCodeAt(W)]=W;// Support decoding URL-safe base64 strings, as Node.js does.
 // See: https://en.wikipedia.org/wiki/Base64#URL_applications
 H["-".charCodeAt(0)]=62,H["_".charCodeAt(0)]=63,i=function(t,e,r,n,i){var o,s,a=8*i-n-1,f=(1<<a)-1,u=f>>1,l=-7,c=r?i-1:0,h=r?-1:1,p=t[e+c];for(c+=h,o=p&(1<<-l)-1,p>>=-l,l+=a;l>0;o=256*o+t[e+c],c+=h,l-=8);for(s=o&(1<<-l)-1,o>>=-l,l+=n;l>0;s=256*s+t[e+c],c+=h,l-=8);if(0===o)o=1-u;else{if(o===f)return s?NaN:(p?-1:1)*(1/0);s+=Math.pow(2,n),o-=u}return(p?-1:1)*s*Math.pow(2,o-n)},o=function(t,e,r,n,i,o){var s,a,f,u=8*o-i-1,l=(1<<u)-1,c=l>>1,h=23===i?5960464477539062e-23:0,p=n?0:o-1,d=n?1:-1,g=e<0||0===e&&1/e<0?1:0;for(isNaN(e=Math.abs(e))||e===1/0?(a=isNaN(e)?1:0,s=l):(s=Math.floor(Math.log(e)/Math.LN2),e*(f=Math.pow(2,-s))<1&&(s--,f*=2),s+c>=1?e+=h/f:e+=h*Math.pow(2,1-c),e*f>=2&&(s++,f/=2),s+c>=l?(a=0,s=l):s+c>=1?(a=(e*f-1)*Math.pow(2,i),s+=c):(a=e*Math.pow(2,c-1)*Math.pow(2,i),s=0));i>=8;t[r+p]=255&a,p+=d,a/=256,i-=8);for(s=s<<i|a,u+=i;u>0;t[r+p]=255&s,p+=d,s/=256,u-=8);t[r+p-d]|=128*g};let G="function"==typeof Symbol&&"function"// eslint-disable-line dot-notation
 ==typeof Symbol.for?Symbol.for("nodejs.util.inspect.custom")// eslint-disable-line dot-notation
@@ -190,7 +190,7 @@ if(r<56320){(e-=3)>-1&&o.push(239,191,189),i=r;continue}// valid surrogate pair
 r=(i-55296<<10|r-56320)+65536}else i&&(e-=3)>-1&&o.push(239,191,189);// encode utf8
 if(i=null,r<128){if((e-=1)<0)break;o.push(r)}else if(r<2048){if((e-=2)<0)break;o.push(r>>6|192,63&r|128)}else if(r<65536){if((e-=3)<0)break;o.push(r>>12|224,r>>6&63|128,63&r|128)}else if(r<1114112){if((e-=4)<0)break;o.push(r>>18|240,r>>12&63|128,r>>6&63|128,63&r|128)}else throw Error("Invalid code point")}return o}function tv(t){return function(t){var e,r,n=function(t){var e=t.length;if(e%4>0)throw Error("Invalid string. Length must be a multiple of 4");// Trim off extra bytes after placeholder bytes are found
 // See: https://github.com/beatgammit/base64-js/issues/42
-var r=t.indexOf("=");-1===r&&(r=e);var n=r===e?0:4-r%4;return[r,n]}(t),i=n[0],o=n[1],s=new J((i+o)*3/4-o),a=0,f=o>0?i-4:i;for(r=0;r<f;r+=4)e=H[t.charCodeAt(r)]<<18|H[t.charCodeAt(r+1)]<<12|H[t.charCodeAt(r+2)]<<6|H[t.charCodeAt(r+3)],s[a++]=e>>16&255,s[a++]=e>>8&255,s[a++]=255&e;return 2===o&&(e=H[t.charCodeAt(r)]<<2|H[t.charCodeAt(r+1)]>>4,s[a++]=255&e),1===o&&(e=H[t.charCodeAt(r)]<<10|H[t.charCodeAt(r+1)]<<4|H[t.charCodeAt(r+2)]>>2,s[a++]=e>>8&255,s[a++]=255&e),s}(function(t){// Node converts strings with length < 2 to ''
+var r=t.indexOf("=");-1===r&&(r=e);var n=r===e?0:4-r%4;return[r,n]}(t),i=n[0],o=n[1],s=new V((i+o)*3/4-o),a=0,f=o>0?i-4:i;for(r=0;r<f;r+=4)e=H[t.charCodeAt(r)]<<18|H[t.charCodeAt(r+1)]<<12|H[t.charCodeAt(r+2)]<<6|H[t.charCodeAt(r+3)],s[a++]=e>>16&255,s[a++]=e>>8&255,s[a++]=255&e;return 2===o&&(e=H[t.charCodeAt(r)]<<2|H[t.charCodeAt(r+1)]>>4,s[a++]=255&e),1===o&&(e=H[t.charCodeAt(r)]<<10|H[t.charCodeAt(r+1)]<<4|H[t.charCodeAt(r+2)]>>2,s[a++]=e>>8&255,s[a++]=255&e),s}(function(t){// Node converts strings with length < 2 to ''
 if(// Node strips out invalid characters like \n and \t from the string, base64-js does not
 (t=// Node takes equal signs as end of the Base64 encoding
 (t=t.split("=")[0]).trim().replace(tR,"")).length<2)return"";// Node allows for non-padded base64 strings (missing trailing ===), base64-js does not
@@ -303,7 +303,7 @@ r=tL(r),a.forEach(function(t,n){k.isUndefined(t)||null===t||e.append(!0===s?tN([
    * @param {Function} fn The function to call for each interceptor
    *
    * @returns {void}
-   */forEach(t){k.forEach(this.handlers,function(e){null!==e&&t(e)})}},tq={silentJSONParsing:!0,forcedJSONParsing:!0,clarifyTimeoutError:!1},tz="undefined"!=typeof URLSearchParams?URLSearchParams:tF,tH="undefined"!=typeof FormData?FormData:null,tJ="undefined"!=typeof Blob?Blob:null;/**
+   */forEach(t){k.forEach(this.handlers,function(e){null!==e&&t(e)})}},tq={silentJSONParsing:!0,forcedJSONParsing:!0,clarifyTimeoutError:!1},tz="undefined"!=typeof URLSearchParams?URLSearchParams:tF,tH="undefined"!=typeof FormData?FormData:null,tV="undefined"!=typeof Blob?Blob:null;/**
  * Determine if we're running in a standard browser environment
  *
  * This allows axios to run in a web worker, and react-native.
@@ -319,8 +319,8 @@ r=tL(r),a.forEach(function(t,n){k.isUndefined(t)||null===t||e.append(!0===s?tN([
  *  navigator.product -> 'NativeScript' or 'NS'
  *
  * @returns {boolean}
- */let tV=("undefined"==typeof navigator||"ReactNative"!==(t=navigator.product)&&"NativeScript"!==t&&"NS"!==t)&&"undefined"!=typeof window&&"undefined"!=typeof document,tW="undefined"!=typeof WorkerGlobalScope&&// eslint-disable-next-line no-undef
-self instanceof WorkerGlobalScope&&"function"==typeof self.importScripts;var tK={classes:{URLSearchParams:tz,FormData:tH,Blob:tJ},isStandardBrowserEnv:tV,isStandardBrowserWebWorkerEnv:tW,protocols:["http","https","file","blob","url","data"]},tG=/**
+ */let tJ=("undefined"==typeof navigator||"ReactNative"!==(t=navigator.product)&&"NativeScript"!==t&&"NS"!==t)&&"undefined"!=typeof window&&"undefined"!=typeof document,tW="undefined"!=typeof WorkerGlobalScope&&// eslint-disable-next-line no-undef
+self instanceof WorkerGlobalScope&&"function"==typeof self.importScripts;var tK={classes:{URLSearchParams:tz,FormData:tH,Blob:tV},isStandardBrowserEnv:tJ,isStandardBrowserWebWorkerEnv:tW,protocols:["http","https","file","blob","url","data"]},tG=/**
  * It takes a FormData object and returns a JavaScript object
  *
  * @param {string} formData The FormData object to convert to JSON.
@@ -510,8 +510,29 @@ let{Axios:eO,AxiosError:eR,CanceledError:eB,isCancel:ev,CancelToken:eS,VERSION:e
       </p>
     </div>
   </div>`,e$=t=>t.reduce((t,e)=>t+eM(e),"");(async function(){try{let t=await eD.fetchImages("concert",10);if(t.length>0){let e=e$(t);ek.innerHTML=e}else console.log("Зображення не знайдено.")}catch(t){console.error("Помилка при отриманні зображень:",t)}})(),// Додамо mySwiper
-document.addEventListener("DOMContentLoaded",function(){new Swiper(".swiper-container",{slidesPerView:3,spaceBetween:20,pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}})}),// Додамо обробник подій для відкриття зображення через basicLightbox
+// document.addEventListener('DOMContentLoaded', function () {
+//     var mySwiper = new Swiper('.swiper-container', {
+//       slidesPerView: 3,
+//       spaceBetween: 20,
+//       pagination: {
+//         el: '.swiper-pagination',
+//         clickable: true,
+//       },
+//       navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//       },
+//       breakpoints: {
+//         // Додайте адаптивність для зменшення кількості слайдів при розширенні екрану
+//         1200: {
+//           slidesPerView: 2, // 2 слайди при розширенні 1200px
+//         },
+//       },
+//     });
+//   });
+document.addEventListener("DOMContentLoaded",function(){new Swiper(".swiper-container",{slidesPerView:1,spaceBetween:20,pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},breakpoints:{// Додайте адаптивність для зменшення кількості слайдів при розширенні екрану
+1200:{slidesPerView:3},768:{slidesPerView:2}}})}),// Додамо обробник подій для відкриття зображення через basicLightbox
 ek.addEventListener("click",//window.addEventListener("keydown", closeModal);
-function(t){t.preventDefault();let e=t.target.classList.contains("gallery__image");if(!e)return;let r=basicLightbox.create(`<img src=${t.target.dataset.source}>`);r.show()})}();//# sourceMappingURL=index.5391229a.js.map
+function(t){t.preventDefault();let e=t.target.classList.contains("gallery__image");if(!e)return;let r=basicLightbox.create(`<img src=${t.target.dataset.source}>`);r.show()})}();//# sourceMappingURL=index.b058df96.js.map
 
-//# sourceMappingURL=index.5391229a.js.map
+//# sourceMappingURL=index.b058df96.js.map
