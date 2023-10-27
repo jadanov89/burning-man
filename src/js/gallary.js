@@ -1,8 +1,10 @@
 import PixabayApiService from './api';
-
+import { initSwiper } from './swiper';
+//import basicLightbox from 'basiclightbox';
 
 const pixabayApiService = new PixabayApiService();
 const galleryEl = document.querySelector('.swiper-wrapper');
+let currentImage = null; // Змінна для поточного модального зображення
 
 const createImageCard = ({
   webformatURL,
@@ -22,7 +24,7 @@ const createImageCard = ({
       <p class="info-item">
         <b>Views<br /><span class="stats">${views}</span></b>
       </p>
-      <p class="info-item">
+      <p class "info-item">
         <b>Comments<br /><span class="stats">${comments}</span></b>
       </p>
       <p class="info-item">
@@ -53,85 +55,33 @@ async function searchAndDisplayImages() {
 
 searchAndDisplayImages();
 
-// Додамо mySwiper
-// document.addEventListener('DOMContentLoaded', function () {
-//     var mySwiper = new Swiper('.swiper-container', {
-//       slidesPerView: 3,
-//       spaceBetween: 20,
-//       pagination: {
-//         el: '.swiper-pagination',
-//         clickable: true,
-//       },
-//       navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//       },
-//       breakpoints: {
-//         // Додайте адаптивність для зменшення кількості слайдів при розширенні екрану
-//         1200: {
-//           slidesPerView: 2, // 2 слайди при розширенні 1200px
-//         },
-//       },
-//     });
-//   });
-
-
 document.addEventListener('DOMContentLoaded', function () {
-  var mySwiper = new Swiper('.swiper-container', {
-    slidesPerView: 1, // Початкова кількість слайдів
-    spaceBetween: 20,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      // Додайте адаптивність для зменшення кількості слайдів при розширенні екрану
-      1200: {
-        slidesPerView: 3, // 2 слайди при розширенні 1200px
-      },
-      768: {
-        slidesPerView: 2, 
-      },
-    },
-  });
+  initSwiper();
 });
-
-
-
-
-
 
 // Додамо обробник подій для відкриття зображення через basicLightbox
 galleryEl.addEventListener('click', galleryImageClick);
 
-//window.addEventListener("keydown", closeModal);
-
+window.addEventListener("keydown", closeModal);
 
 function galleryImageClick(evt) {
   evt.preventDefault();
 
-    const isGalerryClick = evt.target.classList.contains("gallery__image");
+  const isGalleryClick = evt.target.classList.contains("gallery__image");
+  const source = evt.target.dataset.source;
 
-    if(!isGalerryClick) {
-      return;
+  if (isGalleryClick && source) {
+    if (currentImage) {
+      currentImage.close(); // Закрити попереднє вікно, якщо воно вже відкрито
     }
 
-  const bigSizeImage = basicLightbox.create(
-    `<img src=${evt.target.dataset.source}>`
-  );
-
-  bigSizeImage.show();
+    currentImage = basicLightbox.create(`<img src=${source}>`);
+    currentImage.show();
+  }
 }
 
 function closeModal(evt) {
-  if (evt.code === "Escape") {
-    fullSizeImage.close(() =>
-      window.removeEventListener("keydown", closeModal)
-    );
+  if (evt.code === "Escape" && currentImage) {
+    currentImage.close();
   }
 }
-  
