@@ -15,7 +15,7 @@ let{toString:f}=Object.prototype,{getPrototypeOf:u}=Object,l=(e=Object.create(nu
  * @returns {any}
  */function S(t,e,{allOwnKeys:r=!1}={}){let n,i;// Don't bother if no value provided
 if(null!=t){if("object"!=typeof t&&/*eslint no-param-reassign:0*/(t=[t]),p(t))for(n=0,i=t.length;n<i;n++)e.call(null,t[n],n,t);else{let i;// Iterate over object keys
-let o=r?Object.getOwnPropertyNames(t):Object.keys(t),s=o.length;for(n=0;n<s;n++)i=o[n],e.call(null,t[i],i,t)}}}function T(t,e){let r;e=e.toLowerCase();let n=Object.keys(t),i=n.length;for(;i-- >0;)if(e===(r=n[i]).toLowerCase())return r;return null}let U=/*eslint no-undef:0*/"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:s,C=t=>!d(t)&&t!==U,I=(r="undefined"!=typeof Uint8Array&&u(Uint8Array),t=>r&&t instanceof r),x=c("HTMLFormElement"),L=(({hasOwnProperty:t})=>(e,r)=>t.call(e,r))(Object.prototype),N=c("RegExp"),_=(t,e)=>{let r=Object.getOwnPropertyDescriptors(t),n={};S(r,(r,i)=>{let o;!1!==(o=e(r,i,t))&&(n[i]=o||r)}),Object.defineProperties(t,n)},P="abcdefghijklmnopqrstuvwxyz",j="0123456789",F={DIGIT:j,ALPHA:P,ALPHA_DIGIT:P+P.toUpperCase()+j},D=c("AsyncFunction");var k={isArray:p,isArrayBuffer:g,isBuffer:/**
+let o=r?Object.getOwnPropertyNames(t):Object.keys(t),s=o.length;for(n=0;n<s;n++)i=o[n],e.call(null,t[i],i,t)}}}function T(t,e){let r;e=e.toLowerCase();let n=Object.keys(t),i=n.length;for(;i-- >0;)if(e===(r=n[i]).toLowerCase())return r;return null}let U=/*eslint no-undef:0*/"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:s,C=t=>!d(t)&&t!==U,I=(r="undefined"!=typeof Uint8Array&&u(Uint8Array),t=>r&&t instanceof r),L=c("HTMLFormElement"),x=(({hasOwnProperty:t})=>(e,r)=>t.call(e,r))(Object.prototype),N=c("RegExp"),_=(t,e)=>{let r=Object.getOwnPropertyDescriptors(t),n={};S(r,(r,i)=>{let o;!1!==(o=e(r,i,t))&&(n[i]=o||r)}),Object.defineProperties(t,n)},P="abcdefghijklmnopqrstuvwxyz",j="0123456789",F={DIGIT:j,ALPHA:P,ALPHA_DIGIT:P+P.toUpperCase()+j},D=c("AsyncFunction");var k={isArray:p,isArrayBuffer:g,isBuffer:/**
  * Determine if a value is a Buffer
  *
  * @param {*} val The value to test
@@ -46,7 +46,7 @@ let o=r?Object.getOwnPropertyNames(t):Object.keys(t),s=o.length;for(n=0;n<s;n++)
  *
  * @returns {Object} Result of all merge properties
  */function t(){let{caseless:e}=C(this)&&this||{},r={},n=(n,i)=>{let o=e&&T(r,i)||i;E(r[o])&&E(n)?r[o]=t(r[o],n):E(n)?r[o]=t({},n):p(n)?r[o]=n.slice():r[o]=n};for(let t=0,e=arguments.length;t<e;t++)arguments[t]&&S(arguments[t],n);return r},extend:(t,e,r,{allOwnKeys:n}={})=>(S(e,(e,n)=>{r&&m(e)?t[n]=a(e,r):t[n]=e},{allOwnKeys:n}),t),trim:t=>t.trim?t.trim():t.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,""),stripBOM:t=>(65279===t.charCodeAt(0)&&(t=t.slice(1)),t),inherits:(t,e,r,n)=>{t.prototype=Object.create(e.prototype,n),t.prototype.constructor=t,Object.defineProperty(t,"super",{value:e.prototype}),r&&Object.assign(t.prototype,r)},toFlatObject:(t,e,r,n)=>{let i,o,s;let a={};// eslint-disable-next-line no-eq-null,eqeqeq
-if(e=e||{},null==t)return e;do{for(o=(i=Object.getOwnPropertyNames(t)).length;o-- >0;)s=i[o],(!n||n(s,t,e))&&!a[s]&&(e[s]=t[s],a[s]=!0);t=!1!==r&&u(t)}while(t&&(!r||r(t,e))&&t!==Object.prototype)return e},kindOf:l,kindOfTest:c,endsWith:(t,e,r)=>{t=String(t),(void 0===r||r>t.length)&&(r=t.length),r-=e.length;let n=t.indexOf(e,r);return -1!==n&&n===r},toArray:t=>{if(!t)return null;if(p(t))return t;let e=t.length;if(!b(e))return null;let r=Array(e);for(;e-- >0;)r[e]=t[e];return r},forEachEntry:(t,e)=>{let r;let n=t&&t[Symbol.iterator],i=n.call(t);for(;(r=i.next())&&!r.done;){let n=r.value;e.call(t,n[0],n[1])}},matchAll:(t,e)=>{let r;let n=[];for(;null!==(r=t.exec(e));)n.push(r);return n},isHTMLForm:x,hasOwnProperty:L,hasOwnProp:L,reduceDescriptors:_,freezeMethods:t=>{_(t,(e,r)=>{// skip restricted props in strict mode
+if(e=e||{},null==t)return e;do{for(o=(i=Object.getOwnPropertyNames(t)).length;o-- >0;)s=i[o],(!n||n(s,t,e))&&!a[s]&&(e[s]=t[s],a[s]=!0);t=!1!==r&&u(t)}while(t&&(!r||r(t,e))&&t!==Object.prototype)return e},kindOf:l,kindOfTest:c,endsWith:(t,e,r)=>{t=String(t),(void 0===r||r>t.length)&&(r=t.length),r-=e.length;let n=t.indexOf(e,r);return -1!==n&&n===r},toArray:t=>{if(!t)return null;if(p(t))return t;let e=t.length;if(!b(e))return null;let r=Array(e);for(;e-- >0;)r[e]=t[e];return r},forEachEntry:(t,e)=>{let r;let n=t&&t[Symbol.iterator],i=n.call(t);for(;(r=i.next())&&!r.done;){let n=r.value;e.call(t,n[0],n[1])}},matchAll:(t,e)=>{let r;let n=[];for(;null!==(r=t.exec(e));)n.push(r);return n},isHTMLForm:L,hasOwnProperty:x,hasOwnProp:x,reduceDescriptors:_,freezeMethods:t=>{_(t,(e,r)=>{// skip restricted props in strict mode
 if(m(t)&&-1!==["arguments","caller","callee"].indexOf(r))return!1;let n=t[r];if(m(n)){if(e.enumerable=!1,"writable"in e){e.writable=!1;return}e.set||(e.set=()=>{throw Error("Can not rewrite read-only method '"+r+"'")})}})},toObjectSet:(t,e)=>{let r={};return(t=>{t.forEach(t=>{r[t]=!0})})(p(t)?t:String(t).split(e)),r},toCamelCase:t=>t.toLowerCase().replace(/[-_\s]([a-z\d])(\w*)/g,function(t,e,r){return e.toUpperCase()+r}),noop:()=>{},toFiniteNumber:(t,e)=>Number.isFinite(t=+t)?t:e,findKey:T,global:U,isContextDefined:C,ALPHABET:F,generateString:(t=16,e=F.ALPHA_DIGIT)=>{let r="",{length:n}=e;for(;t--;)r+=e[Math.random()*n|0];return r},isSpecCompliantForm:/**
  * If the thing is a FormData object, return true, otherwise return false.
  *
@@ -206,13 +206,13 @@ function tC(t){return"undefined"==typeof BigInt?tI:t}function tI(){throw Error("
  * @param {string} thing - The object or array to be visited.
  *
  * @returns {boolean}
- */function tx(t){return k.isPlainObject(t)||k.isArray(t)}/**
+ */function tL(t){return k.isPlainObject(t)||k.isArray(t)}/**
  * It removes the brackets from the end of a string
  *
  * @param {string} key - The key of the parameter.
  *
  * @returns {string} the key without the brackets.
- */function tL(t){return k.endsWith(t,"[]")?t.slice(0,-2):t}/**
+ */function tx(t){return k.endsWith(t,"[]")?t.slice(0,-2):t}/**
  * It takes a path, a key, and a boolean, and returns a string
  *
  * @param {string} path - The path to the current key.
@@ -221,7 +221,7 @@ function tC(t){return"undefined"==typeof BigInt?tI:t}function tI(){throw Error("
  *
  * @returns {string} The path to the current key.
  */function tN(t,e,r){return t?t.concat(e).map(function(t,e){return(// eslint-disable-next-line no-param-reassign
-t=tL(t),!r&&e?"["+t+"]":t)}).join(r?".":""):e}let t_=k.toFlatObject(k,{},null,function(t){return/^is[A-Z]/.test(t)});var tP=/**
+t=tx(t),!r&&e?"["+t+"]":t)}).join(r?".":""):e}let t_=k.toFlatObject(k,{},null,function(t){return/^is[A-Z]/.test(t)});var tP=/**
  * Convert a data object to FormData
  *
  * @param {Object} obj
@@ -255,8 +255,8 @@ return!k.isUndefined(e[t])});let n=r.metaTokens,i=r.visitor||l,o=r.dots,s=r.inde
    * @returns {boolean} return true to visit the each prop of the value recursively
    */function l(t,r,i){let a=t;if(t&&!i&&"object"==typeof t){if(k.endsWith(r,"{}"))// eslint-disable-next-line no-param-reassign
 r=n?r:r.slice(0,-2),// eslint-disable-next-line no-param-reassign
-t=JSON.stringify(t);else{var f;if(k.isArray(t)&&(f=t,k.isArray(f)&&!f.some(tx))||(k.isFileList(t)||k.endsWith(r,"[]"))&&(a=k.toArray(t)))return(// eslint-disable-next-line no-param-reassign
-r=tL(r),a.forEach(function(t,n){k.isUndefined(t)||null===t||e.append(!0===s?tN([r],n,o):null===s?r:r+"[]",u(t))}),!1)}}return!!tx(t)||(e.append(tN(i,r,o),u(t)),!1)}let c=[],h=Object.assign(t_,{defaultVisitor:l,convertValue:u,isVisitable:tx});if(!k.isObject(t))throw TypeError("data must be an object");return!function t(r,n){if(!k.isUndefined(r)){if(-1!==c.indexOf(r))throw Error("Circular reference detected in "+n.join("."));c.push(r),k.forEach(r,function(r,o){let s=!(k.isUndefined(r)||null===r)&&i.call(e,r,k.isString(o)?o.trim():o,n,h);!0===s&&t(r,n?n.concat(o):[o])}),c.pop()}}(t),e};/**
+t=JSON.stringify(t);else{var f;if(k.isArray(t)&&(f=t,k.isArray(f)&&!f.some(tL))||(k.isFileList(t)||k.endsWith(r,"[]"))&&(a=k.toArray(t)))return(// eslint-disable-next-line no-param-reassign
+r=tx(r),a.forEach(function(t,n){k.isUndefined(t)||null===t||e.append(!0===s?tN([r],n,o):null===s?r:r+"[]",u(t))}),!1)}}return!!tL(t)||(e.append(tN(i,r,o),u(t)),!1)}let c=[],h=Object.assign(t_,{defaultVisitor:l,convertValue:u,isVisitable:tL});if(!k.isObject(t))throw TypeError("data must be an object");return!function t(r,n){if(!k.isUndefined(r)){if(-1!==c.indexOf(r))throw Error("Circular reference detected in "+n.join("."));c.push(r),k.forEach(r,function(r,o){let s=!(k.isUndefined(r)||null===r)&&i.call(e,r,k.isString(o)?o.trim():o,n,h);!0===s&&t(r,n?n.concat(o):[o])}),c.pop()}}(t),e};/**
  * It encodes a string by replacing all characters that are not in the unreserved set with
  * their percent-encoded equivalents
  *
@@ -493,7 +493,7 @@ eA.isAxiosError=function(t){return k.isObject(t)&&!0===t.isAxiosError},// Expose
 eA.mergeConfig=eh,eA.AxiosHeaders=t5,eA.formToJSON=t=>tG(k.isHTMLForm(t)?new FormData(t):t),eA.getAdapter=ef.getAdapter,eA.HttpStatusCode=eE,eA.default=eA;// This module is intended to unwrap Axios default export as named.
 // Keep top-level export same with static properties
 // so that it can keep same with es module or cjs
-let{Axios:eO,AxiosError:eR,CanceledError:eB,isCancel:ev,CancelToken:eS,VERSION:eT,all:eU,Cancel:eC,isAxiosError:eI,spread:ex,toFormData:eL,AxiosHeaders:eN,HttpStatusCode:e_,formToJSON:eP,getAdapter:ej,mergeConfig:eF}=eA,eD=new class{constructor(){this.API_KEY="20180121-6058dbf0c2d40e7fb1402d980",this.BASE_URL="https://pixabay.com/api/"}async fetchImages(t,e){try{let r=await eA.get(this.BASE_URL,{params:{key:this.API_KEY,q:t,per_page:e}}),n=r.data;return n.hits}catch(t){throw console.error("Помилка під час запиту до Pixabay API:",t),t}}},ek=document.querySelector(".swiper-wrapper"),eM=({webformatURL:t,largeImageURL:e,tags:r,likes:n,views:i,comments:o,downloads:s})=>`<div class="swiper-slide">
+let{Axios:eO,AxiosError:eR,CanceledError:eB,isCancel:ev,CancelToken:eS,VERSION:eT,all:eU,Cancel:eC,isAxiosError:eI,spread:eL,toFormData:ex,AxiosHeaders:eN,HttpStatusCode:e_,formToJSON:eP,getAdapter:ej,mergeConfig:eF}=eA,eD=new class{constructor(){this.API_KEY="20180121-6058dbf0c2d40e7fb1402d980",this.BASE_URL="https://pixabay.com/api/"}async fetchImages(t,e){try{let r=await eA.get(this.BASE_URL,{params:{key:this.API_KEY,q:t,per_page:e}}),n=r.data;return n.hits}catch(t){throw console.error("Помилка під час запиту до Pixabay API:",t),t}}},ek=document.querySelector(".swiper-wrapper"),eM=null,e$=({webformatURL:t,largeImageURL:e,tags:r,likes:n,views:i,comments:o,downloads:s})=>`<div class="swiper-slide">
     <a href="${e}"><img class="gallery__image" src="${t}" alt="${r}" loading="lazy" data-source="${e}" /></a>
     <div class="info">
       <p class="info-item">
@@ -502,37 +502,14 @@ let{Axios:eO,AxiosError:eR,CanceledError:eB,isCancel:ev,CancelToken:eS,VERSION:e
       <p class="info-item">
         <b>Views<br /><span class="stats">${i}</span></b>
       </p>
-      <p class="info-item">
+      <p class "info-item">
         <b>Comments<br /><span class="stats">${o}</span></b>
       </p>
       <p class="info-item">
         <b>Downloads<br /><span class="stats">${s}</span></b>
       </p>
     </div>
-  </div>`,e$=t=>t.reduce((t,e)=>t+eM(e),"");(async function(){try{let t=await eD.fetchImages("concert",10);if(t.length>0){let e=e$(t);ek.innerHTML=e}else console.log("Зображення не знайдено.")}catch(t){console.error("Помилка при отриманні зображень:",t)}})(),// Додамо mySwiper
-// document.addEventListener('DOMContentLoaded', function () {
-//     var mySwiper = new Swiper('.swiper-container', {
-//       slidesPerView: 3,
-//       spaceBetween: 20,
-//       pagination: {
-//         el: '.swiper-pagination',
-//         clickable: true,
-//       },
-//       navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//       },
-//       breakpoints: {
-//         // Додайте адаптивність для зменшення кількості слайдів при розширенні екрану
-//         1200: {
-//           slidesPerView: 2, // 2 слайди при розширенні 1200px
-//         },
-//       },
-//     });
-//   });
-document.addEventListener("DOMContentLoaded",function(){new Swiper(".swiper-container",{slidesPerView:1,spaceBetween:20,pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},breakpoints:{// Додайте адаптивність для зменшення кількості слайдів при розширенні екрану
-1200:{slidesPerView:3},768:{slidesPerView:2}}})}),// Додамо обробник подій для відкриття зображення через basicLightbox
-ek.addEventListener("click",//window.addEventListener("keydown", closeModal);
-function(t){t.preventDefault();let e=t.target.classList.contains("gallery__image");if(!e)return;let r=basicLightbox.create(`<img src=${t.target.dataset.source}>`);r.show()})}();//# sourceMappingURL=index.b058df96.js.map
+  </div>`,eq=t=>t.reduce((t,e)=>t+e$(e),"");(async function(){try{let t=await eD.fetchImages("concert",10);if(t.length>0){let e=eq(t);ek.innerHTML=e}else console.log("Зображення не знайдено.")}catch(t){console.error("Помилка при отриманні зображень:",t)}})(),document.addEventListener("DOMContentLoaded",function(){new Swiper(".swiper-container",{slidesPerView:1,spaceBetween:20,pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},breakpoints:{1200:{slidesPerView:3},768:{slidesPerView:2}}})}),// Додамо обробник подій для відкриття зображення через basicLightbox
+ek.addEventListener("click",function(t){t.preventDefault();let e=t.target.classList.contains("gallery__image"),r=t.target.dataset.source;e&&r&&(eM&&eM.close(),(eM=basicLightbox.create(`<img src=${r}>`)).show())}),window.addEventListener("keydown",function(t){"Escape"===t.code&&eM&&eM.close()})}();//# sourceMappingURL=index.52b1d5c6.js.map
 
-//# sourceMappingURL=index.b058df96.js.map
+//# sourceMappingURL=index.52b1d5c6.js.map
