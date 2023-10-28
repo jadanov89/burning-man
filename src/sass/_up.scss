@@ -1,0 +1,27 @@
+.pageup {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 99;
+    img {
+        width: 100%;
+    }
+}
+
+.up-svg {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    border: 1px solid #19191980;
+}
+
+.up-svg:hover {
+    background: #19191980;
+}
+
+.pageup:hover .up-svg, 
+.pageup:focus .up-svg {
+    fill: #fff;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
