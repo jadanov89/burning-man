@@ -7,11 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="modal">
                 <p>A custom modal that has been styled independently. It's not part of basicLightbox, but perfectly shows its flexibility.</p>
                 <input placeholder="Type something">
-                <a id="closeModalButton">Close</a>
+               
+                <button type="button" class="closeModalButton">
+                    <svg class="modal-back" width="20" height="20">
+                        <use href="./images/icons.svg#mod-close"></use>
+                    </svg>
+                </button>
             </div>
         `, {
             onShow: (instance) => {
-                const closeModalButton = instance.element().querySelector('#closeModalButton');
+                const closeModalButton = instance.element().querySelector('.closeModalButton');
                 closeModalButton.addEventListener('click', () => instance.close());
                 document.addEventListener('keydown', handleEscPress);
             },
