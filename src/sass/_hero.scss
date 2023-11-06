@@ -117,11 +117,11 @@
 	color: var(--color-secondary-text);
 	margin: -16px -16px 16px -16px;
 }
-.modal input[type="text"],
+.modal input[type="name"],
 .modal input[type="date"],
 .modal input[type="datetime"],
 .modal input[type="email"],
-.modal input[type="number"],
+.modal input[type="phone"],
 .modal input[type="search"],
 .modal input[type="time"],
 .modal input[type="url"],
@@ -145,7 +145,7 @@
     height: 120px;
     resize: none;
 }
-.modal input[type="text"]:focus,
+.modal input[type="name"]:focus,
 .modal input[type="date"]:focus,
 .modal input[type="datetime"]:focus,
 .modal input[type="email"]:focus,
