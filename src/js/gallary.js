@@ -24,7 +24,7 @@ const createImageCard = ({
       <p class="info-item">
         <b>Views<br /><span class="stats">${views}</span></b>
       </p>
-      <p class "info-item">
+      <p class="info-item">
         <b>Comments<br /><span class="stats">${comments}</span></b>
       </p>
       <p class="info-item">
@@ -69,13 +69,17 @@ function galleryImageClick(evt) {
 
   const isGalleryClick = evt.target.classList.contains("gallery__image");
   const source = evt.target.dataset.source;
+  const description = evt.target.alt;
 
   if (isGalleryClick && source) {
     if (currentImage) {
       currentImage.close(); // Закрити попереднє вікно, якщо воно вже відкрито
     }
 
-    currentImage = basicLightbox.create(`<img src=${source}>`);
+    currentImage = basicLightbox.create(`
+    <img src=${source}>
+    <div class="info">
+    <p class="info-item">${description}</p></div>`);
     currentImage.show();
   }
 }

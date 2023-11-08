@@ -70,8 +70,8 @@
     display: flex;
     align-items: center;
     position: fixed;
-    right: 8px;
-    top: 8px;
+    right: -3px;
+    top: 3px;
     width: 30px;
     height: 30px;
     background-color: #fff;
@@ -109,7 +109,7 @@
 	background:  var(--color-secondary-text); 
 }
 .modal h1{
-	background: var(--color-secondary-black);
+	background: #222222;
 	padding: 20px 0;
 	font-size: 140%;
 	font-weight: 300;
@@ -162,7 +162,8 @@
 }
 
 .modal input[type="submit"],
-.modal input[type="button"]{
+.modal input[type="button"],
+.modal button[type="submit"]{
 	box-sizing: border-box;
 	width: 100%;
 	padding: 3%;
@@ -216,6 +217,7 @@
 
 @media screen and (max-width: 480px) {
     .hero {
+        background-attachment: inherit;
         background-image: url('../images/header-bg-480.jpg');
     }
     .hero__bolock {
@@ -227,6 +229,7 @@
 
     .hero__title-h1 {
         font-size: 40px;
+        margin-bottom: 10px;
     }
 
     .hero__title-btn {

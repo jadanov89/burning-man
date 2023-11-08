@@ -1,3 +1,11 @@
+.hidden-scroll {
+  overflow: hidden;
+}
+
+.basicLightbox .basicLightbox--visible .hidden-scroll-auto {
+  overflow: auto;
+}
+
 .gallery-block {
   padding-bottom: 100px;
 }
@@ -25,59 +33,45 @@
   height: 280px;
 }
 
-// .swiper-slider {
-//     display: block;
-//     max-width: 100%;
-//     flex-basis: calc(33.3333333333% - 30px);
-//     margin-left: 30px;
-//     margin-top: 30px;
-// }
+.basicLightbox {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.swiper-slide {
+  box-shadow: 0px 0px 15px 1px rgba(97,97,97,1);
+}
  
-    
-
-
-
-  // .swiper-slide {
-  //   text-align: center;
-  //   font-size: 18px;
-  //   background: #fff;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
-
-  // .swiper-slide img {
-  //   display: block;
-  //   width: 100%;
-  //   height: 100%;
-  //   object-fit: cover;
-  // }
-
 
   .info {
-    display: none;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 1;
-
-    transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    display: flex;
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    }
+  
+  .info-item {
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: center;
   }
   
-  .swiper-slide:hover .info {
-    display: block;
-
-    transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  }
+    .info-item:not(:last-child){
+      margin-right: 20px;
+    }
 
 .stats {
-  color: #fff;
+  position: relative;
+  top: 10px;
+  color: var(--color-secondary-black);
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  margin-bottom: 80px;
 }
 
 .swiper-button-next, .swiper-button-prev {
@@ -96,11 +90,31 @@ span.swiper-pagination-bullet-active{
   background: #fff;
 }
 
+.swiper-pagination {
+  z-index: 1!important;
+}
 
-  @media (max-width: 768px) {
-    .gallery__image {
-      width: 100%;
-      height: 380px;
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 768px) {
+  .gallery__image {
+    width: 100%;
+    height: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-block {
+    padding-bottom: 50px;
+}
+  .gallery-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .gallery__image {
+    width: 100%;
+    height: 260px;
   }
 }
 

@@ -56,3 +56,21 @@
        
     }
 }
+
+@media (max-width: 480px) {
+    .about {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .about-title {
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+    .about-block--item {
+        margin-top: 15px;
+    }
+    .about-block--h1 {
+        font-size: 18px;
+        padding-bottom: 15px;
+    }
+}

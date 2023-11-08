@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <input type="phone" name="phone" placeholder="Your Phone" />
             <input type="email" name="email"  placeholder="Email Address" />
             <textarea name="text" placeholder="Type your Message"></textarea>
-            <button type="button">Send</button>
+            <button type="submit">Send</button>
         </form>
         </div>
         `, {

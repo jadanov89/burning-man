@@ -81,3 +81,22 @@
       flex-wrap: wrap;
   }
 }
+
+
+@media (max-width: 480px) {
+    .contacts-title {
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    .contacts-location-title {
+        padding-bottom: 10px;
+        font-size: 20px;
+    }
+    .contacts-address {
+      flex-wrap: inherit;
+      flex-direction: column;
+  }
+  .contacts-location__li {
+    font-size: 15px;
+    }
+}
