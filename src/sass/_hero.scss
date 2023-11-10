@@ -118,9 +118,11 @@
 	margin: -16px -16px 16px -16px;
 }
 .modal input[type="name"],
+.modal input[type="text"],
 .modal input[type="date"],
 .modal input[type="datetime"],
 .modal input[type="email"],
+.modal input[type="tel"],
 .modal input[type="phone"],
 .modal input[type="search"],
 .modal input[type="time"],
@@ -148,6 +150,7 @@
 .modal input[type="name"]:focus,
 .modal input[type="date"]:focus,
 .modal input[type="datetime"]:focus,
+.modal input[type="tel"]:focus,
 .modal input[type="email"]:focus,
 .modal input[type="number"]:focus,
 .modal input[type="search"]:focus,
