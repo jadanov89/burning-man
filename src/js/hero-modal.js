@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <h1>Contact Us</h1>    
                     <form id="myForm">
                         <input type="text" name="name" placeholder="Your Name" />
-                        <input type="tel" name="phone" placeholder="Your Phone" />
+                        <input type="tel" name="phone" class="tel" placeholder="Your Phone" />
                         <input type="email" name="email" placeholder="Email Address" />
                         <textarea name="text" placeholder="Type your Message"></textarea>
                         <button type="submit" id="sendButton">Send</button>
@@ -55,7 +55,7 @@ function validateForms(form) {
                 required: true,
                 minlength: 2
             },
-            phone: "required digits",
+            phone: {required: true},
                 email: {
                     required: true,
                     email: true
@@ -68,7 +68,7 @@ function validateForms(form) {
                 },
                 phone: {
                     required: "Пожалуйста, введите свой номер телефона",
-                    digits: "Только цифры разрешены"
+                    // digits: "Только цифры разрешены"
                 },
                 email: {
                     required: "Пожалуйста, введите свою почту",
@@ -85,6 +85,7 @@ function validateForms(form) {
                 error.insertBefore(element);
             }
     });
+
+    $(`input[name=phone]`).inputmask(`(999) 999-9999`);
+
 }
-        
-        
